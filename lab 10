@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float matrix[3][4]={{2.5, -3.12, -4.03, -7.5 }, { 0.61, 0.71, -0.05, 0.44 }, { -1.03, -2.05, 0.87, -1.16}};
+
+void ShowMatrix(void){
+	int i,j;
+		for(i=0; i<3; i++){
+			for(j=0; j<3; j++)
+				printf("%+3.3f*x%d",matrix[i][j],j+1);
+        		printf("=%3.3f\n",matrix[i][3]);
+		}
+}
+int main(){
+system("chcp 1251>nul");
+	float tmp, xx[4];
+	short int i, j, k;
+ 
+ShowMatrix();
+  for (i=0; i<3; i++)
+   {
+     tmp=matrix[i][i];
+       for (j=3;j>=i;j--)
+           matrix[i][j]/=tmp;
+         for (j=i+1;j<3;j++)
+        {
+           tmp=matrix[j][i];
+             for (k=3;k>=i;k--)
+           matrix[j][k]-=tmp*matrix[i][k];
+        }
+    }
+    xx[2] = matrix[2][3];
+   for (i=1; i>=0; i--)
+     {
+         xx[i] = matrix[i][3];
+         for (j=i+1;j<3;j++) xx[i]-=matrix[i][j]*xx[j];
+     }
+printf("\nMetod Gaussa:\n");
+  for (i=0; i<3; i++)
+    printf("x%d=%3.3f\n", i+1, xx[i]);
+ system("pause>nul");
+ return 0;
+}
