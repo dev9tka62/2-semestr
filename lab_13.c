@@ -9,11 +9,11 @@ int main () {
 	setlocale(LC_ALL, "rus");
 	const int maxSize = 50;
  	int i,temp=0,X[maxSize],Y[maxSize],c[maxSize],y[maxSize],temp1=0,z,x,j, size;
- 	printf("Введите размер массива : \n");
+ 	printf("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° : \n");
  	scanf("%d", &size);
  	while(size < 1 || size > maxSize)
  	{
- 		printf("Некорректный ввод, повторите \n");
+ 		printf("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ, РїРѕРІС‚РѕСЂРёС‚Рµ \n");
  		scanf("%d", &size);
 	}
     srand(time(0));
@@ -78,7 +78,7 @@ int main () {
 		y[i]=c[i-temp];
 	} 
  
- 	printf("Конечный массив : \n");   
+ 	printf("РљРѕРЅРµС‡РЅС‹Р№ РјР°СЃСЃРёРІ : \n");   
     for(i=0; i<size; i++) 
 	{
 		printf("%d ", y[i]);
